@@ -18,6 +18,7 @@ desktop.ini
 *.bak
 *.swp
 .python
+.py
 
 
 # 个人日志和非共享资源
