@@ -1,0 +1,49 @@
+# Obsidian系统文件
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/cache
+.obsidian/graph.json
+00-used/24 python 自动化
+.vscode/
+.obsidian/
+.cursor/
+.trash
+# 操作系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+*.ipynb
+# 临时文件
+*.tmp
+*.bak
+*.swp
+.python
+
+
+# 个人日志和非共享资源
+05-Journal/
+# 可以根据需要添加其他不想上传的文件夹或文件，例如：
+# 03-Resources/Personal/
+
+
+# Ignore large PDF files removed from Git history
+
+# Ignore all PDF and PPT files globally
+*.pdf
+*.ppt
+*.pptx
+*.docx
+
+# Ignore all zip files
+*.zip
+
+# Ignore specific zip file
+
+# Ignored directories
+.cursor/rules/
+.obsidian/
+.trash/
+.vscode/
+
+# Ignored large files
+00-used/26 vocie/TMSpeech.win-x64-with-model/models/encoder.onnx
