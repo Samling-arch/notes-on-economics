@@ -33,10 +33,11 @@ desktop.ini
 *.ppt
 *.pptx
 *.docx
-
+.py
+.python
 # Ignore all zip files
 *.zip
-
+.ipynb
 # Ignore specific zip file
 
 # Ignored directories
