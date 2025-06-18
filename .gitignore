@@ -35,6 +35,14 @@ desktop.ini
 *.docx
 .py
 .python
+.xls
+.xlsx
+.xlsm
+.xlsb
+.xlsm
+.xlsb
+.xlsm
+.xlsb 
 # Ignore all zip files
 *.zip
 .ipynb

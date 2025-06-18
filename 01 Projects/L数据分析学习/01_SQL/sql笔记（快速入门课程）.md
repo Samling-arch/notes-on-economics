@@ -163,13 +163,14 @@ DBMS
         - address: 地址...等等
     - **行 (Rows)**: 表的每一行数据，也叫==记录 (Record)==。每一行代表一个具体的客户，包含了该客户的所有信息。
 **示例数据**:  
+
 | customer_id | first_name | last_name | address |  
 | :--- | :--- | :--- | :--- |  
-|
-        `111`
+|    `111`
 | Babara | MacCaffrey | 78923 Archway Road |  
 |
-        `222`
+  `222`
+
 | Ines | Brushfield | 34479 Bunting Pass |  
 | ... | ... | ... | ... |  
 |
@@ -317,13 +318,16 @@ regexp 是 regular expression（正则表达式） 的缩写
 where last_name regexp **'^mac|field$|rose'  **
 where last_name regexp **'[gi]e | e[fmq]'** -- 查找含ge/ie或ef/em/eq的 where last_name regexp **'[a-h]e | e[c-j]'**
 正则表达式总结：
+
 | **符号** | **意义** |
-| --- | --- |
-| ^ | 开头 |
-| $ | 结尾 |
-| [abc] | 含abc |
-| [a-c] | 含a到c |
-| &#124; | or |
+| ------ | ------ |
+| ^      | 开头     |
+| $      | 结尾     |
+| [abc]  | 含abc   |
+| [a-c]  | 含a到c   |
+| &#124; | or     |
+|        |        |
+
 ### 9. IS NULL运算符
 **小结**
 找出空值，找出有某些属性缺失的记录
@@ -554,6 +558,7 @@ UNION
 SELECT name     FROM products
 **练习**
 给顾客按积分大小分类，添加新字段type，并按顾客id排序，分类标准如下
+
 | **points** | **type** |
 | --- | --- |
 | <2000 | Bronze |
@@ -717,6 +722,7 @@ Summarizing Data (时长33分钟)
 ### 1. 聚合函数（往往命名新列AS）
 **练习**
 目标：
+
 | **date_range** | **total_sales** | **total_payments** | **what_we_expect (the difference)** |
 | --- | --- | --- | --- |
 | **1st_half_of_2019** |  |  |  |
