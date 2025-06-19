@@ -56,3 +56,8 @@ desktop.ini
 
 # Ignored large files
 00-used/26 vocie/TMSpeech.win-x64-with-model/models/encoder.onnx
+
+# Ignore Excel acceleration cache files
+.accelerate/
+*/.accelerate/
+**/.accelerate/
