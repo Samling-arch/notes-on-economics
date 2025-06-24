@@ -1,63 +1,40 @@
-# Obsidian系统文件
-.obsidian/workspace
-.obsidian/workspace.json
-.obsidian/cache
-.obsidian/graph.json
-00-used/24 python 自动化
-.vscode/
-.obsidian/
-.cursor/
-.trash
-.DS_Store
-Thumbs.db
-desktop.ini
+# Office documents
+*.docx
+*.doc
+*.pptx
+*.xlsx
+*.xls
+
+# Compressed files
+*.zip
+*.rar
+*.7z
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# Notebooks and data
 *.ipynb
-# 临时文件
+*.csv
+
+# Obsidian
+*.canvas
+.obsidian/
+
+# IDE / Editor specific
+.vscode/
+.cursor/
+
+# OS-specific
+__MACOSX/
+[Tt]humbs.db
+[Dd]esktop.ini
+*~
+
+# Other
 *.tmp
 *.bak
-*.swp
-.python
-.py
-
-
-# 个人日志和非共享资源
-05-Journal/
-# 可以根据需要添加其他不想上传的文件夹或文件，例如：
-# 03-Resources/Personal/
-
-
-# Ignore large PDF files removed from Git history
-
-# Ignore all PDF and PPT files globally
-*.pdf
-*.ppt
-*.pptx
-*.docx
-.py
-.python
-.xls
-.xlsx
-.xlsm
-.xlsb
-.xlsm
-.xlsb
-.xlsm
-.xlsb 
-# Ignore all zip files
-*.zip
-.ipynb
-# Ignore specific zip file
-
-# Ignored directories
-.cursor/rules/
-.obsidian/
-.trash/
-.vscode/
-
-# Ignored large files
-00-used/26 vocie/TMSpeech.win-x64-with-model/models/encoder.onnx
-
-# Ignore Excel acceleration cache files
-.accelerate/
-*/.accelerate/
-**/.accelerate/
+SQL窗口函数详解_Canvas.json 
