@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>柠檬水小店的理财大冒险</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        .step {
+            display: none;
+        }
+        .step.active {
+            display: block;
+        }
+        .tab-btn {
+            transition: all 0.3s ease;
+        }
+        .tab-btn.active {
+            background-color: #fde047; /* yellow-300 */
+            color: #1f2937; /* gray-800 */
+            font-weight: bold;
+        }
+        .calculator-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body class="bg-yellow-50">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+        
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-yellow-500">🍋 柠檬水小店的理财大冒险 🍊</h1>
+            <p class="text-gray-600 mt-2">学习怎么为你的小店“找钱”，让生意越做越大！</p>
+        </header>
+
+        <div id="adventure" class="bg-white rounded-2xl shadow-lg p-6">
+            <!-- 故事开始 -->
+            <div id="step-0" class="step active text-center">
+                <img src="https://placehold.co/600x300/fef08a/ca8a04?text=我的柠檬水小店" class="rounded-lg mx-auto mb-4" alt="柠檬水小店">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">欢迎你，小老板！</h2>
+                <p class="text-gray-600 mb-4">你的柠檬水小店要开张啦！但是...你好像需要一些启动资金去买柠檬、糖和杯子。短期筹资就像是“临时借点钱”来帮忙。我们来看看有哪些方法吧！</p>
+                <button onclick="nextStep()" class="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105">开始冒险！</button>
+            </div>
+
+            <!-- 第1站：商业信用 -->
+            <div id="step-1" class="step">
+                <h2 class="text-2xl font-bold text-amber-600 mb-2">第1站：神奇的“赊账”魔法 ✨</h2>
+                <p class="text-gray-600 mb-4">水果店的王阿姨人真好！她答应让你<strong class="text-amber-700">先拿柠檬，过几天再付钱</strong>。这种“以后再付钱”的方法，就叫做“商业信用”。</p>
+                
+                <div class="bg-orange-50 p-4 rounded-lg">
+                    <h3 class="font-bold text-lg mb-2">🎁 王阿姨的折扣挑战</h3>
+                    <p class="text-sm text-gray-700">王阿姨说：“如果你<strong class="text-green-600">10天内</strong>把钱给我，就给你打<strong class="text-green-600">2%的折扣</strong>！如果超过10天，最晚<strong class="text-red-600">30天内</strong>必须付全款哦。”</p>
+                    <p class="text-sm text-gray-500 mt-2">这在财务上记作："2/10, n/30"</p>
+                
+                    <div class="mt-4 p-4 border border-dashed border-gray-300 rounded-lg">
+                        <h4 class="font-semibold text-center">成本计算器：放弃折扣划算吗？</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <label for="totalAmount" class="font-medium">柠檬总价 (元):</label>
+                                <input type="number" id="totalAmount" class="calculator-input" value="100">
+                            </div>
+                            <div>
+                                <label for="discountPercent" class="font-medium">折扣 (%):</label>
+                                <input type="number" id="discountPercent" class="calculator-input" value="2">
+                            </div>
+                            <div>
+                                <label for="discountDays" class="font-medium">折扣期 (天):</label>
+                                <input type="number" id="discountDays" class="calculator-input" value="10">
+                            </div>
+                            <div>
+                                <label for="totalDays" class="font-medium">最晚付款 (天):</label>
+                                <input type="number" id="totalDays" class="calculator-input" value="30">
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button onclick="calculateCreditCost()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full">算一算！</button>
+                        </div>
+                        <div id="creditResult" class="mt-4 p-4 bg-green-100 rounded-lg text-center hidden"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第2站：短期借款 -->
+            <div id="step-2" class="step">
+                <h2 class="text-2xl font-bold text-sky-600 mb-2">第2站：银行是个大钱罐 🏦</h2>
+                <p class="text-gray-600 mb-4">你的小店生意太好，想买一台榨汁机！钱不够怎么办？可以去<strong class="text-sky-700">银行借钱</strong>，这叫“短期借款”。当然，借钱是要付“利息”的，也就是借用钱的“租金”。</p>
+
+                <div class="bg-sky-50 p-4 rounded-lg">
+                     <h3 class="font-bold text-lg mb-2">💰 银行的借款计算器</h3>
+                     <div class="mt-4 p-4 border border-dashed border-gray-300 rounded-lg">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <label for="loanAmount" class="font-medium">想借多少钱 (元):</label>
+                                <input type="number" id="loanAmount" class="calculator-input" value="1000">
+                            </div>
+                             <div>
+                                <label for="interestRate" class="font-medium">年利率 (%):</label>
+                                <input type="number" id="interestRate" class="calculator-input" value="6">
+                            </div>
+                            <div>
+                                <label for="loanDays" class="font-medium">想借多久 (天):</label>
+                                <input type="number" id="loanDays" class="calculator-input" value="90">
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button onclick="calculateLoanCost()" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded-full">算一算利息</button>
+                        </div>
+                        <div id="loanResult" class="mt-4 p-4 bg-sky-100 rounded-lg text-center hidden"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第3站：短期融资券 -->
+            <div id="step-3" class="step">
+                <h2 class="text-2xl font-bold text-purple-600 mb-2">第3站：发行“柠檬借条” 📜</h2>
+                <p class="text-gray-600 mb-4">你的柠檬水店现在是个大品牌了！你需要一大笔钱开分店。你可以<strong class="text-purple-700">给大家写“借条”来借钱</strong>，承诺过一段时间会还更多的钱。这种“借条”就叫“短期融资券”。</p>
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <h3 class="font-bold text-lg mb-2">💸 “柠檬借条”成本计算器</h3>
+                    <p class="text-sm text-gray-700">你发行一张100元的借条，但为了吸引人，你98元就卖了。差价就是你要付的“利息”。</p>
+                    <div class="mt-4 p-4 border border-dashed border-gray-300 rounded-lg">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <label for="bondFaceValue" class="font-medium">借条面值 (元):</label>
+                                <input type="number" id="bondFaceValue" class="calculator-input" value="100">
+                            </div>
+                            <div>
+                                <label for="bondPrice" class="font-medium">实际卖价 (元):</label>
+                                <input type="number" id="bondPrice" class="calculator-input" value="98">
+                            </div>
+                            <div>
+                                <label for="bondDays" class="font-medium">借条期限 (天):</label>
+                                <input type="number" id="bondDays" class="calculator-input" value="90">
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button onclick="calculateBondCost()" class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-full">计算借条成本</button>
+                        </div>
+                        <div id="bondResult" class="mt-4 p-4 bg-purple-100 rounded-lg text-center hidden"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 总结 -->
+            <div id="step-4" class="step text-center">
+                 <img src="https://placehold.co/600x300/a78bfa/f5f3ff?text=理财大师就是你！" class="rounded-lg mx-auto mb-4" alt="理财大师">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">恭喜你，理财小能手！</h2>
+                <p class="text-gray-600 mb-4">你已经学会了三种短期筹资的方法！记住，每种方法都有自己的优点和成本，要根据需要选择最合适的哦！</p>
+                <button onclick="restart()" class="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105">再玩一次</button>
+            </div>
+
+            <!-- 导航 -->
+            <div class="flex justify-between items-center mt-8">
+                <button id="prevBtn" onclick="prevStep()" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-full invisible">上一站</button>
+                <div id="step-indicator" class="flex space-x-2">
+                    <!-- Indicator dots will be generated by JS -->
+                </div>
+                <button id="nextBtn" onclick="nextStep()" class="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-full">下一站</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 0;
+        const totalSteps = 5; // Total number of steps (0-4)
+        const stepIndicator = document.getElementById('step-indicator');
+
+        function updateButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            // Update indicator dots
+            stepIndicator.innerHTML = '';
+            for (let i = 0; i < totalSteps; i++) {
+                const dot = document.createElement('div');
+                dot.className = `w-3 h-3 rounded-full ${i === currentStep ? 'bg-yellow-400' : 'bg-gray-300'}`;
+                stepIndicator.appendChild(dot);
+            }
+
+            if (currentStep === 0) {
+                prevBtn.classList.add('invisible');
+            } else {
+                prevBtn.classList.remove('invisible');
+            }
+
+            if (currentStep === totalSteps - 1) {
+                nextBtn.classList.add('invisible');
+            } else {
+                 if (currentStep === 0) { // Special case for first slide
+                    nextBtn.classList.add('invisible');
+                 } else {
+                    nextBtn.classList.remove('invisible');
+                 }
+            }
+             // Show navigation only after the first step
+            if(currentStep > 0) {
+                document.querySelector('.flex.justify-between').style.visibility = 'visible';
+            } else {
+                 document.querySelector('.flex.justify-between').style.visibility = 'hidden';
+            }
+
+        }
+
+        function showStep(stepIndex) {
+            document.querySelectorAll('.step').forEach((step, index) => {
+                if (index === stepIndex) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+            updateButtons();
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+        
+        function restart() {
+            currentStep = 0;
+            showStep(0);
+        }
+
+        // Calculator Functions
+        function calculateCreditCost() {
+            const totalAmount = parseFloat(document.getElementById('totalAmount').value);
+            const discountPercent = parseFloat(document.getElementById('discountPercent').value);
+            const discountDays = parseFloat(document.getElementById('discountDays').value);
+            const totalDays = parseFloat(document.getElementById('totalDays').value);
+
+            const discountAmount = totalAmount * (discountPercent / 100);
+            const amountPaidWithDiscount = totalAmount - discountAmount;
+            const extraDays = totalDays - discountDays;
+            
+            // Simplified cost calculation for a child
+            const cost = (discountAmount / amountPaidWithDiscount) * (365 / extraDays);
+            const annualCost = (cost * 100).toFixed(2);
+
+            const resultDiv = document.getElementById('creditResult');
+            resultDiv.innerHTML = `
+                <p>如果你在${discountDays}天内付款，可以省下 <strong class='text-green-700'>${discountAmount.toFixed(2)}元</strong>！</p>
+                <p class="mt-2">如果你放弃折扣，等于你多花了${discountAmount.toFixed(2)}元，只为了能晚${extraDays}天付款。</p>
+                <p class="mt-2 text-sm text-gray-600">这相当于一个年利率为 <strong class='text-red-600'>${annualCost}%</strong> 的“隐形贷款”，非常贵哦！</p>
+            `;
+            resultDiv.classList.remove('hidden');
+        }
+
+        function calculateLoanCost() {
+            const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+            const interestRate = parseFloat(document.getElementById('interestRate').value);
+            const loanDays = parseFloat(document.getElementById('loanDays').value);
+
+            const totalInterest = loanAmount * (interestRate / 100) * (loanDays / 365);
+
+            const resultDiv = document.getElementById('loanResult');
+            resultDiv.innerHTML = `
+                <p>借款${loanDays}天，你需要付给银行的“租金”（利息）是 <strong class='text-sky-700'>${totalInterest.toFixed(2)}元</strong>。</p>
+                <p class="mt-2">到期后，你要一共还给银行 <strong class='text-red-600'>${(loanAmount + totalInterest).toFixed(2)}元</strong>。</p>
+            `;
+            resultDiv.classList.remove('hidden');
+        }
+
+        function calculateBondCost() {
+            const faceValue = parseFloat(document.getElementById('bondFaceValue').value);
+            const price = parseFloat(document.getElementById('bondPrice').value);
+            const days = parseFloat(document.getElementById('bondDays').value);
+
+            const interest = faceValue - price;
+            // Simplified annual cost
+            const annualCost = (interest / price) * (365 / days);
+
+            const resultDiv = document.getElementById('bondResult');
+            resultDiv.innerHTML = `
+                <p>这张“借条”的成本是 <strong class='text-purple-700'>${interest.toFixed(2)}元</strong>。</p>
+                <p class="mt-2 text-sm text-gray-600">换算成年利率的话，大约是 <strong class='text-red-600'>${(annualCost * 100).toFixed(2)}%</strong>。</p>
+            `;
+            resultDiv.classList.remove('hidden');
+        }
+
+        // Initial setup
+        document.addEventListener('DOMContentLoaded', () => {
+            showStep(0);
+        });
+
+    </script>
+</body>
+</html>
