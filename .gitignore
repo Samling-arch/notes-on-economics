@@ -5,6 +5,7 @@
 *.xlsx
 *.xls
 
+
 # Compressed files
 *.zip
 *.rar
@@ -23,7 +24,10 @@
 # Obsidian
 *.canvas
 .obsidian/
-
+.cursor/
+.trash/
+.vscode/
+*.python
 # IDE / Editor specific
 .vscode/
 .cursor/
