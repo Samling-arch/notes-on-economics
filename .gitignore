@@ -42,3 +42,11 @@ __MACOSX/
 *.tmp
 *.bak
 SQL窗口函数详解_Canvas.json 
+
+# AI prompts and sensitive content
+提示词.md
+*prompt*.md
+*AI*.md
+# Any files containing prompt instructions
+*提示*
+*prompt* 
